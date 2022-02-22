@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="carousel-container">
+    <button [disabled]="step === 0" (click)="decrementStep()"><</button>
+    <div
+      class="image-container"
+      *ngFor="let cover of coverList | async; let i = index"
+    >
+      <img *ngIf="i === step" src="{{ cover }}" alt="" />
+    </div>
+    <button (click)="incrementStep()">></button>
+  </div>
+</div>
